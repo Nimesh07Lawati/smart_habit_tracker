@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_habit_tracker/features/shared_widgets/habit_title.dart';
+import 'package:smart_habit_tracker/widgets/app_button.dart';
+import 'package:smart_habit_tracker/widgets/app_input.dart';
 import '../providers/habit_provider.dart';
 
 class HomePage extends ConsumerWidget {
@@ -43,16 +45,16 @@ class HomePage extends ConsumerWidget {
       context: context,
       builder: (_) => AlertDialog(
         title: const Text("Add Habit"),
-        content: TextField(
+        content: AppInput(
           controller: controller,
-          decoration: const InputDecoration(hintText: "Enter habit title"),
+          hintText: 'Enter habit titile',
         ),
         actions: [
-          TextButton(
+          AppButton(
             onPressed: () => Navigator.pop(context),
             child: const Text("Cancel"),
           ),
-          ElevatedButton(
+          AppButton(
             onPressed: () {
               if (controller.text.isNotEmpty) {
                 ref
