@@ -400,6 +400,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.13.0"
+  math_equations:
+    dependency: "direct main"
+    description:
+      name: math_equations
+      sha256: d905b0ff1a106b8a6e2616e60363294d5b7e9e462dda821c27b106f4cef38cde
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   meta:
     dependency: transitive
     description:

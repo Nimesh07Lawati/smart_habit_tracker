@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_habit_tracker/core/constants/app_theme.dart';
-import 'features/habits/presentation/pages/home_page.dart';
+import 'core/routes/app_routes.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -12,10 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const HomePage(),
+      routerConfig: appRouter,
+      // home: const HomePage(),
     );
   }
 }
