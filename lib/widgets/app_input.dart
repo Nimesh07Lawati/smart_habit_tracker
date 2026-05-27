@@ -5,6 +5,7 @@ class AppInput extends StatelessWidget {
   final String? hintText;
   final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
+  final FormFieldValidator<String>? validator;
 
   const AppInput({
     super.key,
@@ -12,13 +13,15 @@ class AppInput extends StatelessWidget {
     this.hintText,
     this.controller,
     this.onChanged,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: controller,
       onChanged: onChanged,
+      validator: validator,
       decoration: InputDecoration(
         labelText: labelText,
         hintText: hintText,

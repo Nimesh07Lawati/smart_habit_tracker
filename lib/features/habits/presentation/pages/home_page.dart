@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_habit_tracker/features/shared_widgets/habit_title.dart';
 import 'package:smart_habit_tracker/widgets/app_button.dart';
 import 'package:smart_habit_tracker/widgets/app_input.dart';
+import 'package:smart_habit_tracker/widgets/custom_app_bar.dart';
 import '../providers/habit_provider.dart';
 
 class HomePage extends ConsumerWidget {
@@ -13,10 +14,7 @@ class HomePage extends ConsumerWidget {
     final habits = ref.watch(habitProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Smart Habit Tracker"),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: "My Habits"),
       body: habits.isEmpty
           ? const Center(
               child: Text(
